@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group mb-3">
+                <input type="number" id="num1" class="form-control" placeholder="First Number">
+                <select id="operation" class="custom-select">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <input type="number" id="num2" class="form-control" placeholder="Second Number">
+                <div class="input-group-append">
+                    <button onclick="calculate()" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+            <div>
+                <p class="lead">Result: <span id="result">0</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+<!-- Optional Bootstrap JavaScript and jQuery if you're using Bootstrap's JS components -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
