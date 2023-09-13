@@ -16,24 +16,34 @@ First, let's set up the HTML:
 </head>
 
 <body>
-    <div>
-        <input type="number" id="num1" placeholder="First Number">
-        <select id="operation">
-            <option value="add">+</option>
-            <option value="subtract">-</option>
-            <option value="multiply">*</option>
-            <option value="divide">/</option>
-        </select>
-        <input type="number" id="num2" placeholder="Second Number">
-        <button onclick="calculate()">Calculate</button>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group mb-3">
+                <input type="number" id="num1" class="form-control" placeholder="First Number">
+                <select id="operation" class="custom-select">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <input type="number" id="num2" class="form-control" placeholder="Second Number">
+                <div class="input-group-append">
+                    <button onclick="calculate()" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+            <div>
+                <p class="lead">Result: <span id="result">0</span></p>
+            </div>
+        </div>
     </div>
-    <div>
-        <p>Result: <span id="result">0</span></p>
-    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 
 </html>
+    
 Step 2: JavaScript Code
 Now, let's create the JavaScript:
 
@@ -94,6 +104,83 @@ function calculate() {
         console.log("Calculation attempted");
     }
 }
+
+To enhance the appearance of your calculator using CSS and Bootstrap, follow these steps:
+Step 1: Include Bootstrap
+Add the Bootstrap CSS and JS CDN links to the <head> section of your HTML.
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional Bootstrap JavaScript and jQuery if you're using Bootstrap's JS components -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+To enhance the appearance of your calculator using CSS and Bootstrap, follow these steps:
+
+Step 1: Include Bootstrap
+Add the Bootstrap CSS and JS CDN links to the <head> section of your HTML.
+
+html
+Copy code
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional Bootstrap JavaScript and jQuery if you're using Bootstrap's JS components -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+Step 2: Update HTML with Bootstrap Classes
+Modify your HTML elements by adding appropriate Bootstrap classes. This will allow your elements to adopt Bootstrap's styles and responsive behavior:
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group mb-3">
+                <input type="number" id="num1" class="form-control" placeholder="First Number">
+                <select id="operation" class="custom-select">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <input type="number" id="num2" class="form-control" placeholder="Second Number">
+                <div class="input-group-append">
+                    <button onclick="calculate()" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+            <div>
+                <p class="lead">Result: <span id="result">0</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+Step 3: Custom CSS
+You can write custom CSS to give your application a unique appearance. Create a styles.css file:
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f8fa;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100px;
+}
+
+Include the styles.css in your <head> section:
+
+<link rel="stylesheet" href="styles.css">
+
+
 Description:
 We created a Calculator class with four methods: add, subtract, multiply, and divide.
 The calculate() function is called when the button is pressed.
